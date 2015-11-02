@@ -9,6 +9,8 @@ using Microsoft.Framework.Configuration;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Dnx.Runtime;
 using IAT.Web.Globals;
+using IAT.Web.Models.DAL;
+using Microsoft.Data.Entity;
 
 namespace IAT.Web
 {
@@ -34,6 +36,7 @@ namespace IAT.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddEntityFramework().AddSqlServer().AddDbContext<IATDataContext>(options => options.UseSqlServer(Configuration["Data:IATDataContext:ConnectionString"])); ;
             services.AddMvc();
         }
 

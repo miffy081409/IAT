@@ -1,11 +1,10 @@
 ﻿{
   "AppSettings": {
-    "SiteTitle": "Scrum Template Developer API"
+    "SiteTitle": "ICOMM App Telemetry"
   },
   "Data": {
-    "ScrumDataContext": {
-      "ConnectionString": "Server=.\\SQLEXPRESS;Initial Catalog=ScrumDB;Integrated Security=true;MultipleActiveResultSets=True;"
-      //"ConnectionString": "Server=(localdb)\\mssqllocaldb;Initial Catalog=ScrumDB;Integrated Security=true;MultipleActiveResultSets=True;"//test only
+    "IATDataContext": {
+      "ConnectionString": "Server=.\\SQLEXPRESS;Initial Catalog=IAT;Integrated Security=true;MultipleActiveResultSets=True;"
     }
   }
 }
