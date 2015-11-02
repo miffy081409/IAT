@@ -3,6 +3,7 @@
 
 #wrapper {
     margin-top:52px;
+    padding:10px;
 }
 
 #current-user {
@@ -22,7 +23,21 @@
     padding-right: 32px;
 }
 
+
+/*index page*/
+.at-apps > .caption {
+    text-align:center;
+}
+
+    .at-apps > .caption > h3 {
+        font-size:20px;
+    }
+
 /*override bootstrap classes*/
+a:hover, a:focus {
+    text-decoration:none;
+}
+
 .form-control {
     background-color:#2B2E32;
     border: 1px solid rgba(0, 0, 0, 0.2) !important;

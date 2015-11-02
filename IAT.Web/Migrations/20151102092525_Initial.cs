@@ -10,6 +10,24 @@ namespace IAT.Web.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Apps",
+                columns: table => new
+                {
+                    AppID = table.Column<int>(isNullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerIdentityStrategy.IdentityColumn),
+                    AppName = table.Column<string>(isNullable: true),
+                    CreatedBy = table.Column<string>(isNullable: true),
+                    CreatedOn = table.Column<DateTime>(isNullable: false),
+                    Icon = table.Column<byte[]>(isNullable: true),
+                    ModifiedBy = table.Column<string>(isNullable: true),
+                    ModifiedOn = table.Column<DateTime>(isNullable: false),
+                    RecordStatus = table.Column<int>(isNullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_App", x => x.AppID);
+                });
+            migrationBuilder.CreateTable(
                 name: "Exceptions",
                 columns: table => new
                 {
@@ -55,6 +73,7 @@ namespace IAT.Web.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable("Apps");
             migrationBuilder.DropTable("Exceptions");
             migrationBuilder.DropTable("Users");
         }

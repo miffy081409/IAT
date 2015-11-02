@@ -17,6 +17,30 @@ namespace IAT.Web.Migrations
                 .Annotation("ProductVersion", "7.0.0-beta7-15540")
                 .Annotation("SqlServer:ValueGenerationStrategy", SqlServerIdentityStrategy.IdentityColumn);
 
+            modelBuilder.Entity("IAT.Web.Models.DAL.Entities.App", b =>
+                {
+                    b.Property<int>("AppID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("AppName");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<byte[]>("Icon");
+
+                    b.Property<string>("ModifiedBy");
+
+                    b.Property<DateTime>("ModifiedOn");
+
+                    b.Property<int>("RecordStatus");
+
+                    b.Key("AppID");
+
+                    b.Annotation("Relational:TableName", "Apps");
+                });
+
             modelBuilder.Entity("IAT.Web.Models.DAL.Entities.AppException", b =>
                 {
                     b.Property<int>("AppExcetionID");

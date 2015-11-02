@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+@section scripts{
+
+    <script src="~/apps/Dashboard/dashboard.js"></script>
+    <script src="~/apps/Dashboard/ViewModels/dashboardViewModel.js"></script>
+}
+
+<div class="col-md-12" ng-app="dashboardApp">
+    <div class="row">
+        <div data-ng-view></div>
+    </div>
+</div>

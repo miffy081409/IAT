@@ -13,7 +13,7 @@ namespace IAT.Web.Migrations
     {
         public override string Id
         {
-            get { return "20151102034237_Initial"; }
+            get { return "20151102092525_Initial"; }
         }
 
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,6 +21,30 @@ namespace IAT.Web.Migrations
             modelBuilder
                 .Annotation("ProductVersion", "7.0.0-beta7-15540")
                 .Annotation("SqlServer:ValueGenerationStrategy", SqlServerIdentityStrategy.IdentityColumn);
+
+            modelBuilder.Entity("IAT.Web.Models.DAL.Entities.App", b =>
+                {
+                    b.Property<int>("AppID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("AppName");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<byte[]>("Icon");
+
+                    b.Property<string>("ModifiedBy");
+
+                    b.Property<DateTime>("ModifiedOn");
+
+                    b.Property<int>("RecordStatus");
+
+                    b.Key("AppID");
+
+                    b.Annotation("Relational:TableName", "Apps");
+                });
 
             modelBuilder.Entity("IAT.Web.Models.DAL.Entities.AppException", b =>
                 {

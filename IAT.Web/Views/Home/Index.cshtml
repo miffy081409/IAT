@@ -2,3 +2,17 @@
 @{
     ViewBag.Title = "Home Page";
 }
+
+@section scripts{
+    <script src="~/apps/Default/default.js"></script>
+    <script src="~/apps/Default/Models/app.js"></script>
+    <script src="~/apps/Default/ViewModels/defaultViewModel.js"></script>
+    <script src="~/apps/Dashboard/dashboard.js"></script>
+    <script src="~/apps/Dashboard/ViewModels/dashboardViewModel.js"></script>
+}
+
+<div class="col-md-12" ng-app="defaultApp">
+    <div class="row">
+        <div data-ng-view></div>
+    </div>
+</div>

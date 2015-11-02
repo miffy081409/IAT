@@ -13,10 +13,12 @@ namespace IAT.Web.Models.DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().ToTable("Users");
+            modelBuilder.Entity<App>().ToTable("Apps");
             modelBuilder.Entity<AppException>().ToTable("Exceptions");
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<App> Apps { get; set; }
         public DbSet<AppException> Exceptions { get; set; }
     }
 }
