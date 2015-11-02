@@ -13,6 +13,8 @@ namespace IAT.Web.Globals
             app.UseMvc(routes => {
                 routes.MapRoute("Default", "{controller=home}/{action=index}/{id?}");
             });
+
+            app.RunIISPipeline();
         }
     }
 }

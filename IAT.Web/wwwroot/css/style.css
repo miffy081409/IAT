@@ -1,0 +1,57 @@
+﻿body {
+}
+
+#wrapper {
+    margin-top:52px;
+}
+
+#current-user {
+    position:relative;
+    min-width:100px;
+}
+
+#current-user > img {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+}
+
+#quick-search {
+    width:300px;
+    background: #2B2E32 url("../images/icons/search-line-icon.png") no-repeat scroll 272px center;
+    padding-right: 32px;
+}
+
+/*override bootstrap classes*/
+.form-control {
+    background-color:#2B2E32;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    color:#fff;
+}
+
+.navbar {
+    border-radius:0 !important;
+}
+
+.navbar-nav > li > a {
+    min-height:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-right: 0px solid rgba(0, 0, 0, 0.2) !important;
+    border-left: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+    .navbar-nav > li > a > .glyphicon {
+        font-size:20px;
+        height:30px;
+    }
+
+    .navbar-nav > li > a > .badge {
+        position:absolute;
+        top:2px;
+        right:2px;
+    }
+
+.badge {
+    background-color: red !important;
+}
