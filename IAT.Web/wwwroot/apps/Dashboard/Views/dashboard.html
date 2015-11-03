@@ -1,1 +1,29 @@
-﻿<h1>{{ AppName }} Dashboard motherfucker!</h1>
+﻿
+<div class="spinner-container" data-loading>
+    <label>Please wait this won't take long.</label>
+</div>
+
+<div class="row-offcanvas" ng-show="IsValidated">
+    <div class="col-md-3">
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                {{ AppName }} Dashboard
+            </a>
+            <a href="#" class="list-group-item">Activities</a>
+            <a href="#" class="list-group-item">Exception Monitoring</a>
+            <a href="#" class="list-group-item">Pending Requests</a>
+            <a href="#" class="list-group-item">Others</a>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="col-md-12">
+            <h3>{{ AppName }} Dashboard</h3>
+        </div>
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="/" target="_self">Apps</a></li>
+                <li class="active">{{ AppName }} Dashboard</li>
+            </ol>
+        </div>
+    </div>
+</div>

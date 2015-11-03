@@ -39,11 +39,10 @@ namespace IAT.Web.Controllers.API
             return this.db.Apps.ToList();
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{name}")]
+        public App Get(string name)
         {
-            return "value";
+            return this.db.Apps.FirstOrDefault(x => x.AppName.ToLower() == name.ToLower());
         }
 
         // POST api/values
