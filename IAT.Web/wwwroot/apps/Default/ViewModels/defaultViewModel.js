@@ -1,7 +1,6 @@
 ﻿defaultApp.controller("defaultViewModel", function ($rootScope, $scope, app) {
     
     $scope.AppList = null;
-
     initVM();
 
     function initVM() {

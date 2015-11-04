@@ -33,6 +33,36 @@
         font-size:20px;
     }
 
+/*Dashboard Page*/
+#dashboard-menu {
+    padding: 0px;
+    position: fixed;
+    top:0;
+    left: 1px;
+    width:250px;
+    background-color:#32383E;
+    height:100%;
+    padding-top:50px;
+    border-right: 1px solid rgba(0, 0, 0, 0.6);
+    overflow-y:auto;
+}
+
+    #dashboard-menu > .list-group > a {
+        border:0;
+    }
+
+    #dashboard-menu > .list-group > a > span{
+        margin-right:10px;
+    }
+
+    #dashboard-menu > .list-group > a:first-child, #dashboard-menu > .list-group > a:last-child {
+        border-radius:0;
+    }
+
+#dashboard-content-title > span {
+    margin-right:10px;
+}
+
 /*override bootstrap classes*/
 a:hover, a:focus {
     text-decoration:none;
