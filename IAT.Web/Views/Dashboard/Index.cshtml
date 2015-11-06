@@ -4,14 +4,34 @@
 }
 
 @section scripts{
-
     <script src="~/apps/Dashboard/dashboard.js"></script>
     <script src="~/apps/Dashboard/Models/app.js"></script>
     <script src="~/apps/Dashboard/ViewModels/dashboardViewModel.js"></script>
 }
 
-<div class="col-md-12" ng-app="dashboardApp">
+<div class="col-md-12" ng-app="dashboardApp" data-ng-controller="dashboardViewModel">
     <div class="row">
-        <div data-ng-view></div>
+        <div class="spinner-container" data-loading>
+            <label>{{ ValidationMessage }}</label>
+        </div>
+
+        <div class="row-offcanvas" ng-show="IsValidated">
+
+            <div id="dashboard-menu">
+                <div class="list-group">
+                    <a href="{{ menu.url }}" ng-click="menuClicked($index)" ng-class="['list-group-item', {active: menu.name == SelectedMenu.name}]" ng-repeat="menu in DashboardMenus">
+                        <span class="{{ menu.bootstrapIcon }}"></span>
+                        {{ menu.name }}
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-offset-2 col-md-10">
+                <div class="col-md-12">
+                    <h4 id="dashboard-content-title"><span class="{{ SelectedMenu.bootstrapIcon }}"></span> {{ SelectedMenu.name }}</h4>
+                    <div data-ng-view></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

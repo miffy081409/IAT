@@ -31,7 +31,9 @@
 }])
 .config(function ($routeProvider, $locationProvider) {
     //configure angular routing here
-    $routeProvider.when('/dashboard?', { templateUrl: '/apps/Dashboard/Views/dashboard.html', controller: 'dashboardViewModel' });
+    $routeProvider.when('/app/:app', { templateUrl: '/apps/Dashboard/Views/statistics.html', controller: 'dashboardViewModel' })
+    .when('/app/:app/activities', { templateUrl: '/apps/Dashboard/Views/activities.html', controller: 'dashboardViewModel' })
+    .when('/app/:app/exception-monitoring', { templateUrl: '/apps/Dashboard/Views/exceptions.html', controller: 'dashboardViewModel' });
     $locationProvider.html5Mode({
         enabled: true,
         requireBase: false

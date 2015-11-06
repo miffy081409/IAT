@@ -11,6 +11,7 @@ namespace IAT.Web.Globals
         public static void Configure(IApplicationBuilder app)
         {
             app.UseMvc(routes => {
+                routes.MapRoute("Dashboard", "app/{*catchall}", new { controller = "dashboard", action = "index" });
                 routes.MapRoute("Default", "{controller=home}/{action=index}/{id?}");
             });
 
