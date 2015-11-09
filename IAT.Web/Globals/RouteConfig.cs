@@ -14,8 +14,6 @@ namespace IAT.Web.Globals
                 routes.MapRoute("Dashboard", "app/{*catchall}", new { controller = "dashboard", action = "index" });
                 routes.MapRoute("Default", "{controller=home}/{action=index}/{id?}");
             });
-
-            app.RunIISPipeline();
         }
     }
 }

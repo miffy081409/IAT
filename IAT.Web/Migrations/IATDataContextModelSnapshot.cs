@@ -4,7 +4,6 @@ using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
 using IAT.Web.Models.DAL;
-using Microsoft.Data.Entity.SqlServer.Metadata;
 
 namespace IAT.Web.Migrations
 {
@@ -14,8 +13,8 @@ namespace IAT.Web.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .Annotation("ProductVersion", "7.0.0-beta7-15540")
-                .Annotation("SqlServer:ValueGenerationStrategy", SqlServerIdentityStrategy.IdentityColumn);
+                .Annotation("ProductVersion", "7.0.0-beta8-15964")
+                .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("IAT.Web.Models.DAL.Entities.App", b =>
                 {
@@ -36,14 +35,15 @@ namespace IAT.Web.Migrations
 
                     b.Property<int>("RecordStatus");
 
-                    b.Key("AppID");
+                    b.HasKey("AppID");
 
                     b.Annotation("Relational:TableName", "Apps");
                 });
 
             modelBuilder.Entity("IAT.Web.Models.DAL.Entities.AppException", b =>
                 {
-                    b.Property<int>("AppExcetionID");
+                    b.Property<int>("AppExcetionID")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("AppName");
 
@@ -65,7 +65,7 @@ namespace IAT.Web.Migrations
 
                     b.Property<int>("RecordStatus");
 
-                    b.Key("AppExcetionID");
+                    b.HasKey("AppExcetionID");
 
                     b.Annotation("Relational:TableName", "Exceptions");
                 });
@@ -97,7 +97,7 @@ namespace IAT.Web.Migrations
 
                     b.Property<string>("Username");
 
-                    b.Key("UserID");
+                    b.HasKey("UserID");
 
                     b.Annotation("Relational:TableName", "Users");
                 });

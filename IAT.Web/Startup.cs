@@ -22,7 +22,7 @@ namespace IAT.Web
         {
             // Setup configuration sources.
 
-            var builder = new ConfigurationBuilder(appEnv.ApplicationBasePath).AddJsonFile("config.json").AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
+            var builder = new ConfigurationBuilder().SetBasePath(appEnv.ApplicationBasePath).AddJsonFile("config.json").AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
 
             //if (env.IsDevelopment())
             //{
@@ -43,6 +43,9 @@ namespace IAT.Web
         public void Configure(IApplicationBuilder app)
         {
             RouteConfig.Configure(app);
+            //app.UseStaticFiles();
+            app.UseIISPlatformHandler();
+            app.UseFileServer();
         }
     }
 }

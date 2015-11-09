@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using IAT.Web.Models.DAL;
 using IAT.Web.Models.DAL.Entities;
+using System.Net;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -42,7 +43,7 @@ namespace IAT.Web.Controllers.API
         [HttpGet("{name}")]
         public App Get(string name)
         {
-            return this.db.Apps.FirstOrDefault(x => x.AppName.ToLower() == name.ToLower());
+            return this.db.Apps.FirstOrDefault(x => x.AppName.ToLower() == WebUtility.UrlDecode(name.ToLower()));
         }
 
         // POST api/values

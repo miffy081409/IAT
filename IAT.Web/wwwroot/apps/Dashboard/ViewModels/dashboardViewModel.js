@@ -27,7 +27,9 @@
             $scope.DashboardMenus = [{ bootstrapIcon: 'glyphicon glyphicon-dashboard', name: appInfo.AppName + ' Dashboard', url: baseUrl }, { bootstrapIcon: 'glyphicon glyphicon-tasks', name: 'Activities', url: baseUrl + '/activities' },
                             { bootstrapIcon: 'glyphicon glyphicon-stats', name: 'Exception Monitoring', url: baseUrl + '/exception-monitoring' }, { bootstrapIcon: ' glyphicon glyphicon-user', name: 'Account Management', url: baseUrl + '/account-management' },
                             { bootstrapIcon: 'glyphicon glyphicon-folder-open', name: 'Others', url: baseUrl + '/others' }];
+
             $scope.AppName = appInfo.AppName;
+
             getCurrentSelectedMenu();
         });
     }
